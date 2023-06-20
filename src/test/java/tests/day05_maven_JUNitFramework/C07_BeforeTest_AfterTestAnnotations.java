@@ -15,7 +15,7 @@ public class C07_BeforeTest_AfterTestAnnotations {
     calismasini istedigimiz methodlari
     @Before,
     her test methodundan sonra calismasini istedigimiz methodlari ise
-    @After annotaion i ile isaretleriz.
+    @After annotation i ile isaretleriz.
 
     Boylece test methodu calismaya baslarken ekstradan method call yapmaya gerek olmadan @Before methodu calisir.
     Test methodu bitince de hicbir method call olmaksizin @After annotation ina sahip method calisir.
