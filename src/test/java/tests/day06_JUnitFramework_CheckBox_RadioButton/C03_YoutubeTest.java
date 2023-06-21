@@ -17,7 +17,7 @@ public class C03_YoutubeTest {
     static WebDriver driver;
 
     @BeforeClass
-    public static void setup() {
+    public static void setup() throws InterruptedException {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -25,7 +25,8 @@ public class C03_YoutubeTest {
         driver.get("https://www.youtube.com");
 
         // cookies kabul eder
-        //driver.findElement(By.xpath("(//div[@class='yt-spec-touch-feedback-shape yt-spec-touch-feedback-shape--touch-response-inverse'])[2]"));
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("(//div[@class='yt-spec-touch-feedback-shape yt-spec-touch-feedback-shape--touch-response-inverse'])[2]"));
 
     }
     @AfterClass

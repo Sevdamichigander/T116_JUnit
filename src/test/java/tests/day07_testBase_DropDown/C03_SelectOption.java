@@ -57,6 +57,8 @@ public class C03_SelectOption extends TestBase {
 
         Assert.assertEquals(expextedOptionSayisi,actualOptionSayisi); // Failed 3 tane var ama biz expected i 4 dedigimiz icin
 
+        bekle(3);
+
     }
 }
 
