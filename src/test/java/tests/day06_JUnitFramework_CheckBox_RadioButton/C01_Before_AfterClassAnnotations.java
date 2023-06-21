@@ -62,7 +62,9 @@ public class C01_Before_AfterClassAnnotations {
         // 2- Nutella arattirin ve sonuclarin Nutella icerdigini test edin
         WebElement aramaKutusu = driver.findElement(By.id("twotabsearchtextbox"));
         aramaKutusu.sendKeys("Nutella" + Keys.ENTER);
+
         WebElement sonucYaziElementi = driver.findElement(By.xpath("//h1[@class='a-size-base s-desktop-toolbar a-text-normal']"));
+
         String expectedIcerik = "Nutella";
         String actualYazi = sonucYaziElementi.getText();
         if (actualYazi.contains(expectedIcerik)) {

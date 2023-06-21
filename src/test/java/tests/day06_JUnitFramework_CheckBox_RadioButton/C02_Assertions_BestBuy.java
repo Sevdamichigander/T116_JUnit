@@ -14,7 +14,7 @@ import java.time.Duration;
 
 public class C02_Assertions_BestBuy {
 
-    static WebDriver driver;
+     static WebDriver driver;
 
     @BeforeClass
     public static void setup() {
@@ -42,6 +42,7 @@ public class C02_Assertions_BestBuy {
 
         Assert.assertEquals(expectedUrl,actualUrl);
 
+
     }
     @Test
     public void titleTest(){
@@ -65,6 +66,7 @@ public class C02_Assertions_BestBuy {
 
     @Test
     public void francaisLinkTest() {
+        // Fransizca Linkin görüntülendiğini test edin
 
         WebElement francaisLink = driver.findElement(By.xpath("//button[@lang='fr']"));
         Assert.assertTrue(francaisLink.isDisplayed());

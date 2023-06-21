@@ -45,7 +45,6 @@ public class C05_JUnitOtomatikRaporlama {
             System.out.println("Amazon icerik testi passed");
         }else{
             System.out.println("Amazon icerik testi failed");
-
             throw new RuntimeException();
 
         }
