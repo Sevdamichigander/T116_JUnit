@@ -43,6 +43,7 @@ public class C04_JsAlerts extends TestBase {
         //1. Test
         //  -  https://the-internet.herokuapp.com/javascript_alerts adresine gidin
         driver.get("https://the-internet.herokuapp.com/javascript_alerts");
+
         //  - 1.alert'e tiklayin
         bekle(1);
 
@@ -50,6 +51,7 @@ public class C04_JsAlerts extends TestBase {
         bekle(3);
 
         //  -  Alert'deki yazinin "I am a JS Alert" oldugunu test edin
+
         String actualAlertYazisi = driver.switchTo().alert().getText();
         String expectedAlertYazisi = "I am a JS Alert";
         Assert.assertEquals(expectedAlertYazisi, actualAlertYazisi);

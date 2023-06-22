@@ -21,24 +21,31 @@ public class C02_dropDownMenu extends TestBase {
             driver.get("https://www.amazon.com");
 
             // arama kutusunun yanindaki dropdown menude 28 secenek oldugunu test edin
+
             // dropdown menuyu locate et
 
             WebElement dropdownMenuElementi = driver.findElement(By.id("searchDropdownBox"));
+
             // Select class'indan bir obje olusturalim
 
             Select select = new Select(dropdownMenuElementi);
+
             int expectedOptionSayisi = 28;
             int actualOptionSayisi = select.getOptions().size();
+
             Assert.assertEquals(expectedOptionSayisi, actualOptionSayisi);
 
             // dropdown menuden Baby kategorisini secin
+
             select.selectByVisibleText("Baby");
 
             // Arama kutusuna Nutella yazip aratin
+
             WebElement aramaKutusu = driver.findElement(By.id("twotabsearchtextbox"));
             aramaKutusu.sendKeys("Nutella" + Keys.ENTER);
 
             // bulunan sonuc sayisinin 10'dan fazla oldugunu test edin
+
             String sonucYazisi = driver.findElement(By.xpath("//h1[@class='a-size-base s-desktop-toolbar a-text-normal']")).getText();
             String sonucSayisiStr = sonucYazisi.substring(0, sonucYazisi.indexOf(" ")); //  "13"
             int sonucSayisiInt = Integer.parseInt(sonucSayisiStr); // int olarak 13
@@ -63,9 +70,10 @@ public class C02_dropDownMenu extends TestBase {
             System.out.println(select.getFirstSelectedOption().getText()); // Baby
 
             // sectigimiz opsiyon'un Baby oldugunu test edin
-            String expectedSeciliOption = "Baby";
-            String actualSeciliOption = select.getFirstSelectedOption().getText();
-            Assert.assertEquals(expectedSeciliOption, actualSeciliOption);
+
+            String expectedSelectedOption = "Baby";
+            String actualSelectedOption = select.getFirstSelectedOption().getText();
+            Assert.assertEquals(expectedSelectedOption, actualSelectedOption);
             bekle(3);
         }
     }
