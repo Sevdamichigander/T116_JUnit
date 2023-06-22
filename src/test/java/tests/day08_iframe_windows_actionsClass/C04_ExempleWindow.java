@@ -13,21 +13,31 @@ public class C04_ExempleWindow extends TestBaseQuit {
     @Test
     public void test01(){
         //● https://the-internet.herokuapp.com/windows adresine gidin.
+
         driver.get("https://the-internet.herokuapp.com/windows");
+
         //● Sayfadaki textin “Opening a new window” olduğunu doğrulayın.
+
         WebElement openingYaziElementi= driver.findElement(By.tagName("h3"));
         String expectedYazi = "Opening a new window";
         String actualyazi = openingYaziElementi.getText();
         Assert.assertEquals(expectedYazi,actualyazi);
+
         //● Sayfa başlığının(title) “The Internet” olduğunu doğrulayın.
+
         String expectedTitle = "The Internet";
         String actualTitle = driver.getTitle();
         Assert.assertEquals(expectedTitle,actualTitle);
+
         // gorevde bu sayfaya geri donus oldugu icin handle degerini kaydedelim
+
         String ilkSayfaWHD = driver.getWindowHandle();
         System.out.println("ilk sayfa whd : " + ilkSayfaWHD);
+
         //● Click Here butonuna basın.
+
         driver.findElement(By.xpath("//*[text()='Click Here']")).click();
+
         //● Acilan yeni pencerenin sayfa başlığının (title) “New Window” oldugunu dogrulayin.
         /*
             KONTROLUMUZ disinda yeni bir tab veya window acilinca
@@ -45,9 +55,12 @@ public class C04_ExempleWindow extends TestBaseQuit {
                ikinciSayfaWHD olarak kaydedelim
             5- buldugumuz  ikinciSayfaWHD'ni kullanarak 2.sayfaya gecelim
          */
+
         Set<String> wHDSeti = driver.getWindowHandles();
         System.out.println(wHDSeti);
+
         String ikinciSafyaHandle="";
+
         for (String each: wHDSeti
         ) {
             if (!each.equals(ilkSayfaWHD)){
@@ -56,17 +69,11 @@ public class C04_ExempleWindow extends TestBaseQuit {
         }
 
         driver.switchTo().window(ikinciSafyaHandle);
+
         expectedTitle ="New Window";
         actualTitle = driver.getTitle();
         Assert.assertEquals(expectedTitle,actualTitle);
         //● Sayfadaki textin “New Window” olduğunu doğrulayın.
-        WebElement yaziElementi = driver.findElement(By.tagName("h3"));
-        String expectedyazi = "New Window";
-
-        //String actualyazi = yaziElementi.getText();
-       // Assert.assertTrue(expectedYazi,actualyazi);
-
-
         //● Bir önceki pencereye geri döndükten sonra sayfa başlığının “The Internet” olduğunu doğrulayın.
         bekle(5);
     }
