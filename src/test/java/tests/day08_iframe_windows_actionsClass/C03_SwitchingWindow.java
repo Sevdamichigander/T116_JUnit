@@ -10,8 +10,13 @@ import utilities.TestBaseQuit;
 public class C03_SwitchingWindow extends TestBaseQuit {
     @Test
     public void test01(){
+
+        //amazon a gidin
+
         driver.get("https://www.amazon.com");
+
         String windowHandleAmazon = driver.getWindowHandle();
+
         // yeni bir tab olarak wise quarter'a gidelim
 
 

@@ -17,6 +17,7 @@ public class C01_iframe extends TestBase {
         WebElement anIframeElementi= driver.findElement(By.tagName("h3"));
         Assert.assertTrue(anIframeElementi.isEnabled());
         System.out.println(anIframeElementi.getText());
+
         //  - Text Box’a “Merhaba Dunya!” yazin.
         /*
         Textbox elementi gozumuzun onunde olmasina
@@ -25,11 +26,14 @@ public class C01_iframe extends TestBase {
         textbox'in bir iFrame icerisinde oldugunu gorduk
         textbox'i kullanmadan once iframe'e gecis yapmaliyiz
          */
+
         WebElement iFrameElementi = driver.findElement(By.id("mce_0_ifr"));
         driver.switchTo().frame(iFrameElementi);
+
         WebElement textBoxElementi = driver.findElement(By.tagName("p"));
         textBoxElementi.clear();
         textBoxElementi.sendKeys("Merhaba Dunya");
+
         //  - TextBox’in altinda bulunan “Elemental Selenium” link textinin gorunur oldugunu dogrulayin
         //      ve  konsolda yazdirin.
         /*
@@ -41,8 +45,10 @@ public class C01_iframe extends TestBase {
             parentFrame() : eger ic ice iFrame'ler varsa, bir ust iFrame'e cikar
          */
         driver.switchTo().defaultContent();
+
         WebElement elementalSeleniumElementi = driver.findElement(By.xpath("//*[text() ='Elemental Selenium']"));
         Assert.assertTrue(elementalSeleniumElementi.isDisplayed());
+
         System.out.println(elementalSeleniumElementi.getText());
 
         elementalSeleniumElementi.click();

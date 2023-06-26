@@ -14,7 +14,7 @@ public class ReusableMethods {
 
         for (String each: windowHandlesSeti
              ) {
-            if (each.equals(ilkSayfaWindowHandleDegeri)){
+            if (!each.equals(ilkSayfaWindowHandleDegeri)){
                 ikinciSayfaWindowHandleDegeri=each;
             }
         }

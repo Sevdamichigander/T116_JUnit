@@ -34,28 +34,26 @@ public class C05_Actions extends TestBaseQuit {
 
 
         //5- Tamam diyerek alert’i kapatalim
+
         driver.switchTo().alert().accept();
 
         //6- Elemental Selenium linkine tiklayalim
 
-        String ilkSayfaWindowHandleDegeri = driver.getWindowHandle();
+        String ilkSayfaWHD = driver.getWindowHandle();
         driver.findElement(By.xpath("//*[text()='Elemental Selenium']")).click();
 
         //7- Acilan sayfada h1 taginda “Make sure your code lands” yazdigini test edelim
-        String ikinciSayfaWHD = ReusableMethods.ikinciSayfaWHDegeri(ilkSayfaWindowHandleDegeri,driver);
+
+        String ikinciSayfaWHD = ReusableMethods.ikinciSayfaWHDegeri(ilkSayfaWHD,driver);
         driver.switchTo().window(ikinciSayfaWHD);
+
         WebElement yaziElementi = driver.findElement(By.tagName("h1"));
+
         String expectedYazi = "Make sure your code lands";
         String actualYazi = yaziElementi.getText();
+
         Assert.assertEquals(expectedYazi,actualYazi);
+
         bekle(3);
-
-
-
-
-
-
-
-
     }
 }

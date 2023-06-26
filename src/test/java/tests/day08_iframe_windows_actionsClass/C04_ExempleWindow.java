@@ -18,16 +18,15 @@ public class C04_ExempleWindow extends TestBaseQuit {
 
         //● Sayfadaki textin “Opening a new window” olduğunu doğrulayın.
 
-        WebElement openingYaziElementi= driver.findElement(By.tagName("h3"));
-        String expectedYazi = "Opening a new window";
-        String actualyazi = openingYaziElementi.getText();
-        Assert.assertEquals(expectedYazi,actualyazi);
+        String openingYaziElementi= driver.findElement(By.tagName("h3")).getText();
+
+        Assert.assertEquals("Opening a new window",openingYaziElementi);
 
         //● Sayfa başlığının(title) “The Internet” olduğunu doğrulayın.
 
-        String expectedTitle = "The Internet";
         String actualTitle = driver.getTitle();
-        Assert.assertEquals(expectedTitle,actualTitle);
+
+        Assert.assertEquals("The Internet",actualTitle);
 
         // gorevde bu sayfaya geri donus oldugu icin handle degerini kaydedelim
 
@@ -70,12 +69,24 @@ public class C04_ExempleWindow extends TestBaseQuit {
 
         driver.switchTo().window(ikinciSafyaHandle);
 
-        expectedTitle ="New Window";
+        String expectedTitle ="New Window";
         actualTitle = driver.getTitle();
         Assert.assertEquals(expectedTitle,actualTitle);
-        //● Sayfadaki textin “New Window” olduğunu doğrulayın.
-        //● Bir önceki pencereye geri döndükten sonra sayfa başlığının “The Internet” olduğunu doğrulayın.
-        bekle(5);
+
+        //● Sayfadaki textin "New Window" olduğunu doğrulayın.
+        String baslik = driver.findElement(By.tagName("h3")).getText();
+        String expectedIcerik = "New Window";
+        Assert.assertEquals(expectedIcerik,baslik);
+        bekle(2);
+
+        //● Bir önceki pencereye geri döndükten sonra sayfa başlığının "The Internet"
+        //olduğunu doğrulayın
+        driver.switchTo().window(ilkSayfaWHD);
+        baslik = driver.getTitle();
+        String expectedBaslik = "The Internet";
+        Assert.assertEquals(expectedBaslik,baslik);
+
+        bekle(3);
     }
 }
 
