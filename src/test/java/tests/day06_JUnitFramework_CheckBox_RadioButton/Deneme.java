@@ -18,8 +18,6 @@ public class Deneme extends TestBase {
         // d. Radio button elementlerini locate edin ve size uygun olani secin
         // e. Sectiginiz radio button’un seçili, ötekilerin seçili olmadigini test edin
 
-
-
     }
 }
 
