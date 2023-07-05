@@ -11,8 +11,10 @@ import java.nio.file.Paths;
 public class C05_FileExist {
     @Test
     public void test01(){
+
         // copy as Path
         // copy autant que chemin d'access
+
         //"C:\Users\33602\Downloads\avatar.png"
         // C:\Users\33602\Downloads\avatar.png
 
@@ -30,8 +32,6 @@ public class C05_FileExist {
         Assert.assertTrue(Files.exists(Path.of("C:\\Users\\33602\\Downloads\\avatar.png")));//Pass
 
 
-
-
     }
     @Test
     public void dinamikTest(){
@@ -40,10 +40,13 @@ public class C05_FileExist {
 
 
         //Java da dosya yolunu bize veren iki adet kod vardir:
+
         //1- Calistigimiz klasorun dosya yolunu almak isterseniz;
 
         System.out.println(System.getProperty("user.dir"));
+
         // icinde bulundugumuz dosyanin yolunu verir
+
         //C:\Users\33602\IdeaProjects\Team116_JUnit
         //C:\Users\33602\IdeaProjects\Team116_JUnit\src\test\java\tests\day08_iframe_windows_actionsClass\C03_SwitchingWindow.java
 
@@ -53,6 +56,7 @@ public class C05_FileExist {
 
         // Bu bilgileri kullanarak indirdigimiz dosyanin dinamik dosya yolunu elde etmek icin
         // iki parca da elde edebiliriz
+
         //System.getProperty("user.home") + herkeste ayni olan kisim
 
         String dinamikDosyaYolu = System.getProperty("user.home") + "\\Downloads\\avatar.png";
@@ -65,7 +69,5 @@ public class C05_FileExist {
         Assert.assertTrue(Files.exists(Paths.get(dinamikDosyaYolu)));//C:\Users\33602\Downloads\avatar.png
         Assert.assertTrue(Files.exists(Paths.get(dinamikDosyaYolu2)));//C:\Users\33602/Downloads/avatar.png
 
-
     }
-
 }

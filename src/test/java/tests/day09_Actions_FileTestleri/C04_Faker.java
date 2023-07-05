@@ -27,6 +27,7 @@ public class C04_Faker extends TestBase {
         //1- https://www.facebook.com adresine gidelim
 
         driver.get("https://www.facebook.com");
+
         //2- Yeni hesap olustur butonuna basalim
 
         driver.findElement(By.xpath("//button[@data-cookiebanner='accept_button']")).click();
@@ -38,9 +39,11 @@ public class C04_Faker extends TestBase {
 
         Actions actions = new Actions(driver);
         Faker faker = new Faker();
+
         String emailAdress= faker.internet().emailAddress();
 
         WebElement adKutusu = driver.findElement(By.xpath("//input[@name='firstname']"));
+
         actions.click(adKutusu)
                 .sendKeys(faker.name().firstName())
                 .sendKeys(Keys.TAB)

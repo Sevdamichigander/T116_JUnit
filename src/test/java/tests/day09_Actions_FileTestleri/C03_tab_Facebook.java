@@ -18,6 +18,7 @@ public class C03_tab_Facebook extends TestBase {
         driver.get("https://www.facebook.com");
 
         //2- Yeni hesap olustur butonuna basalim
+
         driver.findElement(By.xpath("//button[@data-cookiebanner='accept_button']")).click();
         driver.findElement(By.xpath("//a[@data-testid='open-registration-form-button']")).click();
 
@@ -52,6 +53,7 @@ public class C03_tab_Facebook extends TestBase {
         bekle(3);
 
         //4- Kaydol tusuna basalim
+
         driver.findElement(By.xpath("//button[@name='websubmit']")).click();
         bekle(10);
     }

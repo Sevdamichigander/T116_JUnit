@@ -17,8 +17,11 @@ public class C06_FileExistsTest extends TestBase {
     @Test
     public void test01(){
         //2. https://the-internet.herokuapp.com/download adresine gidelim.
+
         driver.get("https://the-internet.herokuapp.com/download");
+
         //3. logo.png dosyasını indirelim
+
         driver.findElement(By.xpath("//a[text()='avatar.png']")).click();
         bekle(3);
 
@@ -27,12 +30,16 @@ public class C06_FileExistsTest extends TestBase {
         //once dosyanin indirilecegi dosya yolunu dinamik olarak olusturalim.
 
         String dinamikDosyaYolu = System.getProperty("user.home" + "\\Downloads\\avatar.png");
+        Assert.assertTrue(Files.exists(Paths.get(dinamikDosyaYolu)));
+
+
     }
     @Test
     public void masaustu(){
         // avatar resmini masaustune kopyalayin
         // masaustunde avatar dosyasi oldugunu test edin
         String dinamikDosyaYolu= System.getProperty("user.home") + "/Desktop/avatar.png";
+
         Assert.assertTrue(Files.exists(Paths.get(dinamikDosyaYolu)));
     }
 }

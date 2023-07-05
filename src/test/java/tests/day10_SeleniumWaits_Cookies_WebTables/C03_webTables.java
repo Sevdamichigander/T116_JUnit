@@ -33,10 +33,10 @@ public class C03_webTables extends TestBase {
 
         List<WebElement> satirlarListesi = driver.findElements(By.xpath("//tbody/tr"));
 
-        int expectedSatiSayisi = 9;
+        int expectedSatirSayisi = 9;
         int actualSatirSayisi = satirlarListesi.size();
 
-        Assert.assertEquals(expectedSatiSayisi,actualSatirSayisi);
+        Assert.assertEquals(expectedSatirSayisi,actualSatirSayisi);
 
         // 5.Tum satirlari yazdirin
 
@@ -54,6 +54,7 @@ public class C03_webTables extends TestBase {
         // 6. Web table’daki sutun sayisinin 13 olduğunu test edin
 
         List<WebElement> besinciSatirDatalariList = driver.findElements(By.xpath("//tbody/tr[5]/td"));
+
         int expectedSutunSayisi = 13;
         int actualSutunSayisi = besinciSatirDatalariList.size();
         

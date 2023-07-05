@@ -35,10 +35,13 @@ public class C01_ExplicitlyWait {
         //https://the-internet.herokuapp.com/dynamic_controls adresine gidin.
 
         driver.get("https://the-internet.herokuapp.com/dynamic_controls");
+
         // 4. Remove butonuna basin.
+
         driver.findElement(By.xpath("//button[text()='Remove']")).click();
 
         // 5. “It’s gone!” mesajinin goruntulendigini dogrulayin.
+
         WebElement itsGoneElementi = driver.findElement(By.xpath("//p[text()=\"It's gone!\"]"));
         Assert.assertTrue(itsGoneElementi.isDisplayed());
 
@@ -66,6 +69,7 @@ public class C01_ExplicitlyWait {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
+
         //https://the-internet.herokuapp.com/dynamic_controls adresine gidin.
 
         driver.get("https://the-internet.herokuapp.com/dynamic_controls");
@@ -83,13 +87,14 @@ public class C01_ExplicitlyWait {
 
             - Eger webelement'i locate edebiliyorsak, once locate edip
               sonra o elementi istenen condition icin beklemesini isteyebiliriz
+
             - Eger kullanacagimiz elementi locate EDEMIYORSAK
               o zaman locate islemi ile bekleme islemini birlikte yapabiliriz.
          */
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[text()=\"It's gone!\"]")));
-
         WebElement itsGoneElementi = driver.findElement(By.xpath("//p[text()=\"It's gone!\"]"));
+
         Assert.assertTrue(itsGoneElementi.isDisplayed());
 
         // 6. Add buttonuna basin
@@ -103,7 +108,6 @@ public class C01_ExplicitlyWait {
         Assert.assertTrue(itsBackElementi.isDisplayed());
 
         driver.close();
-
 
     }
 }

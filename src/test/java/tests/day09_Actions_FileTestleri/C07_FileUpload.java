@@ -12,15 +12,16 @@ public class C07_FileUpload extends TestBase {
     public void test01() {
 
         //1.https://the-internet.herokuapp.com/upload adresine gidelim
+
         driver.get("https://the-internet.herokuapp.com/upload");
 
         //2.chooseFile butonuna basalim
 
         /* Eger chooseFile dosyasina basarsak fiziki olarak bilgisayarimizda bir window acilir ve orada dosya
-        secmek icin mouse u kullanamayiz/selenium ile ulasamayiz. BU nedenle bu yontemle dosya upload mumkun degildir.
+        secmek icin mouse u kullanamayiz/selenium ile ulasamayiz. Bu nedenle bu yontemle dosya upload mumkun degildir.
         Bunun yerine Selenium un bize sundugu cozumu kullaniyoruz.
         chooseFile butonuna sendKeys ile
-        yuklemek istedigimiz dosyanin dosya yolunu gonderiypruz.
+        yuklemek istedigimiz dosyanin dosya yolunu gonderiyoruz.
         */
 
         //3.Masaustune kopyaladigimiz avatar.png dosyasini secelim.

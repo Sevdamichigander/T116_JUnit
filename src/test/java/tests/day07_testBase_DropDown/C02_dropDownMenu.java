@@ -18,6 +18,7 @@ public class C02_dropDownMenu extends TestBase {
         public void test01() throws InterruptedException {
 
             // Amazon anasayfaya gidin
+
             driver.get("https://www.amazon.com");
 
             // arama kutusunun yanindaki dropdown menude 28 secenek oldugunu test edin
@@ -44,7 +45,7 @@ public class C02_dropDownMenu extends TestBase {
             WebElement aramaKutusu = driver.findElement(By.id("twotabsearchtextbox"));
             aramaKutusu.sendKeys("Nutella" + Keys.ENTER);
 
-            // bulunan sonuc sayisinin 10'dan fazla oldugunu test edin
+            // bulunan sonuc sayisinin 10'dan az oldugunu test edin
 
             String sonucYazisi = driver.findElement(By.xpath("//h1[@class='a-size-base s-desktop-toolbar a-text-normal']")).getText();
             String sonucSayisiStr = sonucYazisi.substring(0, sonucYazisi.indexOf(" ")); //  "13"

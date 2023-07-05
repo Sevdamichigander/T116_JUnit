@@ -52,10 +52,10 @@ public class C03_SelectOption extends TestBase {
 
         // 5. Dropdown’un boyutunun 4 olduğunu test edin
 
-        int expextedOptionSayisi = 4;
+        int expectedOptionSayisi = 4;
         int actualOptionSayisi = optionElementleriList.size();
 
-        Assert.assertEquals(expextedOptionSayisi,actualOptionSayisi); // Failed 3 tane var ama biz expected i 4 dedigimiz icin
+        Assert.assertEquals(expectedOptionSayisi,actualOptionSayisi); // Failed 3 tane var ama biz expected i 4 dedigimiz icin
 
         bekle(3);
 
