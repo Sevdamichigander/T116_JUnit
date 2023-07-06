@@ -38,15 +38,15 @@ public class ReusableMethods {
 
     public  static void tumSayfaScreenshot(WebDriver driver){
 
-        // 1.adim : driver'i takeScereenshot objesine cast edelim
+        // 1.adim : driver'i takeScreenshot objesine cast edelim
 
         TakesScreenshot tss = (TakesScreenshot) driver;
 
         // 2.adim : ekran resminin kaydedilecegi bir file olusturalim
         LocalDateTime ldt = LocalDateTime.now();
-
         DateTimeFormatter dtf =DateTimeFormatter.ofPattern("YYddhhmm");
         String dinamikDosyaYolu = "target/Screenshots/TumSayfa"+ldt.format(dtf)+".png";
+
         System.out.println(dinamikDosyaYolu);
 
         File tumSayfaPhoto = new File(dinamikDosyaYolu);
@@ -68,6 +68,23 @@ public class ReusableMethods {
 
         try {
             FileUtils.copyFile(geciciDosya,tumSayfaPhoto);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void webElementPhoto(WebDriver driver, WebElement fotosuIstenenWebElement) {
+
+        LocalDateTime ldt = LocalDateTime.now(); // 2023-07-06T09:16:39.121372
+        DateTimeFormatter dtf =DateTimeFormatter.ofPattern("YYddhhmm");
+        String dinamikDosyaYolu = "target/Screenshots/webElement"+ldt.format(dtf)+".png";
+
+        File webElementPhoto = new File(dinamikDosyaYolu);
+
+        File geciciDosya = fotosuIstenenWebElement.getScreenshotAs(OutputType.FILE);
+
+        try {
+            FileUtils.copyFile(geciciDosya, webElementPhoto);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
