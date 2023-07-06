@@ -42,6 +42,7 @@ public class C03_SelectOption extends TestBase {
         // dropdown da ki elementleri bir liste olarak alabiliriz
 
         List<WebElement> optionElementleriList = select.getOptions();
+
         System.out.println("************************************");
 
         for (WebElement eachElement:optionElementleriList

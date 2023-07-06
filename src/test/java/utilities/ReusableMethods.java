@@ -43,6 +43,7 @@ public class ReusableMethods {
         TakesScreenshot tss = (TakesScreenshot) driver;
 
         // 2.adim : ekran resminin kaydedilecegi bir file olusturalim
+
         LocalDateTime ldt = LocalDateTime.now();
         DateTimeFormatter dtf =DateTimeFormatter.ofPattern("YYddhhmm");
         String dinamikDosyaYolu = "target/Screenshots/TumSayfa"+ldt.format(dtf)+".png";
@@ -77,6 +78,7 @@ public class ReusableMethods {
 
         LocalDateTime ldt = LocalDateTime.now(); // 2023-07-06T09:16:39.121372
         DateTimeFormatter dtf =DateTimeFormatter.ofPattern("YYddhhmm");
+
         String dinamikDosyaYolu = "target/Screenshots/webElement"+ldt.format(dtf)+".png";
 
         File webElementPhoto = new File(dinamikDosyaYolu);

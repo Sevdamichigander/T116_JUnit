@@ -10,30 +10,35 @@ public class C03_jsExecutors extends TestBase {
 
     @Test
     public void test01(){
-
         // wisequarter anasayfaya gidelim
         driver.get("https://www.wisequarter.com");
 
-        //jsExecutor kullanarak contact linkini tiklayin
+        // jsExecutor kullanarak contact linkini tiklayin
 
-        WebElement contactLink = driver.findElement(By.xpath("//a[text()='Contact']"));
+        WebElement contactLinkElementi= driver.findElement(By.xpath("//a[text()='Contact']"));
+
         JavascriptExecutor jse = (JavascriptExecutor) driver;
 
-        jse.executeScript("arguments[0].click();", contactLink);
+        jse.executeScript("arguments[0].click();",contactLinkElementi);
 
-        //Anasayfaya geri donun
-        // Go to Career Page butonuna kadar asagi inin ve click yapin
+        bekle(2);
 
-        WebElement goToCareerButonu = driver.findElement(By.xpath("//*[@class='fas fa-paper-plane']"));
+        // anasayfaya geri donun
+        // asagida bulunan “Go To Career Page” butonuna kadar asagi inin ve bu butona click yapin
 
-        jse.executeScript("arguments[0].scrollIntoView();", goToCareerButonu);
-        goToCareerButonu.click();
+        driver.navigate().back();
+        bekle(1);
 
-        System.out.println("/////////////////////////////////////////");
+        WebElement goTocareerButonu= driver.findElement(By.xpath("//*[@class='fas fa-paper-plane']"));
+        jse.executeScript("arguments[0].scrollIntoView(true);",goTocareerButonu);
+        bekle(5);
 
+        goTocareerButonu.click();
         jse.executeScript("alert('yasasinnnn');");
-
         bekle(3);
+
+        driver.close();
+
 
 
     }
