@@ -1,8 +1,12 @@
 package utilities;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
+
+import java.io.File;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Set;
 
 public class ReusableMethods {
@@ -30,5 +34,42 @@ public class ReusableMethods {
 
         WebElement istenenHucredekiElement = driver.findElement(By.xpath(dinamikXpath));
         return istenenHucredekiElement.getText();
+    }
+
+    public  static void tumSayfaScreenshot(WebDriver driver){
+
+        // 1.adim : driver'i takeScereenshot objesine cast edelim
+
+        TakesScreenshot tss = (TakesScreenshot) driver;
+
+        // 2.adim : ekran resminin kaydedilecegi bir file olusturalim
+        LocalDateTime ldt = LocalDateTime.now();
+
+        DateTimeFormatter dtf =DateTimeFormatter.ofPattern("YYddhhmm");
+        String dinamikDosyaYolu = "target/Screenshots/TumSayfa"+ldt.format(dtf)+".png";
+        System.out.println(dinamikDosyaYolu);
+
+        File tumSayfaPhoto = new File(dinamikDosyaYolu);
+
+        /*    Dosya adini dinamik hale getirmek icin time stamp kullanalim.
+
+              Adi su sayfa  olsun ama yanina su saatte cektigim fotografin screenshot ini al ve kopyala.
+
+              Boylece ayni anda 1 foto cekecegi icin fotolar karismaz
+
+               */
+
+        // 3.adim tss objesini kullanarak screenshot alalim ve gecici bir dosyaya kaydedelim
+
+        File geciciDosya= tss.getScreenshotAs(OutputType.FILE);
+
+        // 4.adim : gecici dosyayi, olusturdugumuz tumSayfaSS'e kopyalayalim
+
+
+        try {
+            FileUtils.copyFile(geciciDosya,tumSayfaPhoto);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

@@ -16,6 +16,7 @@ public class C01_ReadExcel {
 
         // System.out.println(System.getProperty("user.dir"));
         // projemizin icinde oldugu icin bu islemi yapmaya gerek yok
+
         //Eger excel dosyasi proje icerisinde degil de masaustu/downloads gibi baska bir klasorun icinde ise
         // dosya yolu dinamik hale getirilebilir.
 
@@ -59,8 +60,6 @@ public class C01_ReadExcel {
         String actualBaskentIsmi= ingilizceBaskent.toString();
 
         Assert.assertEquals(expectedBaskentIsmi,actualBaskentIsmi);
-
-
 
         /*
 

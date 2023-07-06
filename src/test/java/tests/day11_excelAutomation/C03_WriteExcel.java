@@ -21,7 +21,7 @@ public class C03_WriteExcel {
 
         // workbook sadece kullanilan hucreleri aliyor.
 
-        // 4) 4.hucreye yeni bir cell olusturalim
+        // 4) 4.hucreye/sutuna yeni bir cell olusturalim
 
         sayfa1.getRow(0).createCell(4);
 

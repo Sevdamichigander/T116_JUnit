@@ -42,9 +42,10 @@ public class C02_ReadExcel {
 
         // - Satir sayisini bulalim
 
-        System.out.println(sayfa1.getLastRowNum()); //190 index yazdirir
+        System.out.println(sayfa1.getLastRowNum()); //190 index yazdirir _ son satir indeksi
 
         // - Fiziki olarak kullanilan satir sayisini bulun
+
         System.out.println(sayfa1.getPhysicalNumberOfRows()); // 191 fiziki olarak kullanilan satiri buluyor
 
         //Sayfa2 icin son satir numarasi ve fiziki olarak kullanilan satir sayisini yazdirin
@@ -52,14 +53,18 @@ public class C02_ReadExcel {
         Sheet sayfa2 = workbook.getSheet("Sayfa2");
 
         System.out.println("Son satir indeksi " + sayfa2.getLastRowNum()); //Son satir indeksi 23
-        System.out.println("Sayfa 2 de fiziki olarak kullanilan satir sayisi " + sayfa2.getPhysicalNumberOfRows());//Sayfa 2 fiziki olarak kullanilan satir sayisi 8
+        System.out.println("Sayfa 2 de fiziki olarak kullanilan satir sayisi " + sayfa2.getPhysicalNumberOfRows());
+        //Sadece fiziki olarak kullanilan satir sayisini getirir ==> 8 **Index ile alakasi yok
+
 
         // Listede Togo isminde bir ulke bulundugunu test edin
 
         boolean flag = false;
 
-        for (int i = 0; i < sayfa1.getLastRowNum(); i++) {
+        for (int i = 0; i < sayfa1.getLastRowNum(); i++) { // i=1 den de baslayabiliriz.
+
             String satirdakiUlkeIsmi = sayfa1.getRow(i).getCell(0).toString();
+
             if (satirdakiUlkeIsmi.equals("Togo")) {
                 System.out.println("Excel de Togo var");
                 flag = true;

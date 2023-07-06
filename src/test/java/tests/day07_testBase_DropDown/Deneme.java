@@ -25,12 +25,14 @@ public class Deneme {
         Select select = new Select(dropDownMenu);
 
         select.selectByIndex(1);
-        System.out.println("Option 1 : " + );
+        System.out.println("Option 1 : " + select.getFirstSelectedOption().getText());
 
         // 2.Value kullanarak Seçenek 2'yi (Option 2) seçin ve yazdırın
         // 3.Visible Text(Görünen metin) kullanarak Seçenek 1’i (Option 1) seçin ve yazdırın
         // 4.Tüm dropdown değerleri(value) yazdırın
         // 5. Dropdown’un boyutunun 4 olduğunu test edin
+
+        driver.close();
 
 
     }
