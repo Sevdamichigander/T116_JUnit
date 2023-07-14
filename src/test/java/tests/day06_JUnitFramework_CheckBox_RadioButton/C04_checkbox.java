@@ -61,7 +61,7 @@ public class C04_checkbox {
     }
 }
 
-/**
+/*
  * Gerekli yapiyi olusturun ve aşağıdaki görevi tamamlayın.
  * a. Verilen web sayfasına gidin.
  * https://the-internet.herokuapp.com/checkboxes

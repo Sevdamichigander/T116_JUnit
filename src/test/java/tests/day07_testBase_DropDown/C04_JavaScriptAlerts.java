@@ -3,10 +3,9 @@ package tests.day07_testBase_DropDown;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import utilities.TestBase;
 
-public class C04_JsAlerts extends TestBase {
+public class C04_JavaScriptAlerts extends TestBase {
 
     /*
       Bir testi calistirirken
@@ -22,21 +21,7 @@ public class C04_JsAlerts extends TestBase {
       sadece driver'imizi o alert'lere switch yapip
       o alert'lerde istenen islemleri yapabiliriz
    */
-    //1. Test
-    //  -  https://the-internet.herokuapp.com/javascript_alerts adresine gidin
-    //  - 1.alert'e tiklayin
-    //  -  Alert'deki yazinin "I am a JS Alert" oldugunu test edin
-    //  -  OK tusuna basip alert'i kapatin
-    //2.Test
-    //  - https://the-internet.herokuapp.com/javascript_alerts adresine gidin
-    //  - 2.alert'e tiklayalim
-    //  - Cancel'a basip, cikan sonuc yazisinin "You clicked: Cancel" oldugunu test edin
-    //3.Test
-    //  - https://the-internet.herokuapp.com/javascript_alerts adresine gidin
-    //  - 3.alert'e tiklayalim
-    //  - Cikan prompt ekranina "Abdullah" yazdiralim
-    //  - OK tusuna basarak alert'i kapatalim
-    //  - Cikan sonuc yazisinin Abdullah icerdigini test edelim
+
 
     @Test
     public void test01() {
