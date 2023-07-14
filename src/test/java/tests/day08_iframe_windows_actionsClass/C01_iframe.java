@@ -11,11 +11,13 @@ public class C01_iframe extends TestBase {
     @Test
     public void iframeTest() throws InterruptedException {
 
+        //iframe = sayfanin icine gomulmus bir penceredir
+
         // 1 ) https://the-internet.herokuapp.com/iframe adresine gidin.
         driver.get("https://the-internet.herokuapp.com/iframe");
 
         // 2 ) Bir metod olusturun: iframeTest
-        //iframe = sayfanin icine gomulmus bir penceredir
+
         //  - “An IFrame containing….” textinin erisilebilir oldugunu test edin ve  konsolda yazdirin.
 
         WebElement anIframeElementi= driver.findElement(By.tagName("h3"));

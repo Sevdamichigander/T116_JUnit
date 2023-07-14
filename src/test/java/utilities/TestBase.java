@@ -20,10 +20,10 @@ public class TestBase {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
 
-    @After
-    public void teardown(){
-        driver.close();
-    }
+    //@After
+    //public void teardown(){
+    //    driver.close();
+    //}
 
     public void bekle(int saniye){
         try {
